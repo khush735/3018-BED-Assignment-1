@@ -16,7 +16,7 @@ export function calculatePortfolioPerformance(
   const percentageChange = (profitOrLoss / initialInvestment) * 100;
 
   
-  // Use ternary operator instead of if statements
+  // Avoid if statement
   const performanceSummary = 
     percentageChange > 20 ? `The portfolio has gained significantly with a profit of $${profitOrLoss.toFixed(2)}.` :
     percentageChange < -20 ? `The portfolio has lost significantly with a loss of $${Math.abs(profitOrLoss).toFixed(2)}.` :
