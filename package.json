@@ -7,8 +7,12 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "start": "node dist/server.js",
+  "dev": "ts-node src/server.ts",
+  "build": "tsc",
+  "test": "jest",
+  "lint": "eslint src/**/*.ts"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/khush735/3018-BED-Assignment-1.git"
