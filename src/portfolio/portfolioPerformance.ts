@@ -32,3 +32,28 @@ export function calculatePortfolioPerformance(
     performanceSummary,
   };
 }
+
+export interface Asset {
+  name: string;
+  value: number;
+}
+
+// Function 1: Find largest holding
+export function findLargestHolding(assets: Asset[]): Asset | null {
+  if (assets.length === 0) return null;
+  return assets.reduce((max, asset) => asset.value > max.value ? asset : max);
+}
+
+// Function 2: Calculate asset allocation
+export function calculateAssetAllocation(assets: Asset[]): { [key: string]: number } {
+  if (assets.length === 0) return {};
+  
+  const totalValue = assets.reduce((sum, asset) => sum + asset.value, 0);
+  const allocation: { [key: string]: number } = {};
+  
+  assets.forEach(asset => {
+    allocation[asset.name] = (asset.value / totalValue) * 100;
+  });
+  
+  return allocation;
+}
